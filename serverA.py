@@ -35,12 +35,9 @@ def focusclient(clientsocket, clientaddress):
             messagetosend = ("Right Number!!!!\r\n")
             clientsocket.send(messagetosend.encode('ascii'))
             running = 0
-            
-            
+                        
         else:
             # difference = abs(guess - numbertoguess)
-            
-            
             if guess < 3:
                 messagetosend = ("It is Cold\r\n")
             else:
@@ -53,7 +50,6 @@ def focusclient(clientsocket, clientaddress):
 
 def generatenumber():
     return random.randint(1, 5)
-
 
 
  

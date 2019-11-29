@@ -13,7 +13,7 @@ class testRandint(unittest.TestCase):
     def test_getnumber(self):
         result = testclass.getnumber(15,17)
         a = 16 
-        self.assertEqual(result, a)
+        self.assertEqual(result,a)
 
     def test_length(self):
         result = testclass.length(0,5)
