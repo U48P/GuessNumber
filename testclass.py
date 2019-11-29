@@ -6,20 +6,14 @@ import testclass
 
 
 
-# den vi testar
-#def generatenumber():
-#return random.randint(1, 5)
-#
+
 random = Random()
 
 #kollar om det ingår mellan
-def gen_age(o, p):
+def getnumber(o, p):
     # generate integer between 15 and 99
     # return random.randint(15, 17)
     return random.randint(o, p)
-
-# def add(a, b):
-#     return int(a) + int(b)
 
 
 # kollar hur många tal som finns 5

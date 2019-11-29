@@ -28,10 +28,7 @@ class testRandint(unittest.TestCase):
         result = testclass.potentialnumbers(1,6)
         f = [1, 2, 3, 4, 5]
         self.assertEqual(result,f)     
-        
-    # def test_add(self):
-    #     result = plus.add(1,2)
-    #     self.assertEqual(result,3)    
+          
 
     def setUp(self):
         testclass.initialize()
