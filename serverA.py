@@ -20,3 +20,48 @@ def focusclient(clientsocket, clientaddress):
     numberofguesses = 0
     
     numbertoguess = generatenumber()
+
+    while running:
+        guess = clientsocket.recv(1024)
+        guessstring = guess.decode('ascii')
+        print(guessstring)
+        
+        guess = int(guessstring.split()[1])
+        
+        numberofguesses += 1
+        running = 1
+        
+        if (guess == numbertoguess):
+            messagetosend = ("Right Number!!!!\r\n")
+            clientsocket.send(messagetosend.encode('ascii'))
+            running = 0
+            
+            
+        else:
+            # difference = abs(guess - numbertoguess)
+            
+            
+            if guess < 3:
+                messagetosend = ("It is Cold\r\n")
+            else:
+                messagetosend = ("It is Warm\r\n")
+            
+            clientsocket.send(messagetosend.encode('ascii'))
+    
+    clientsocket.close()
+    print("Connection closed.")
+
+def generatenumber():
+    return random.randint(1, 5)
+
+
+
+ 
+
+
+
+while 1:
+    (clientsocket, clientaddress) = serversocket.accept()
+    print("Connection received from: ", clientaddress)
+    threading.Thread(target = focusclient, args =  (clientsocket, clientaddress)).start()
+    print("Connection passed to new thread. Returning to listening.")
